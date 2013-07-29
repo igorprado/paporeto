@@ -1,0 +1,11 @@
+= simple_form_for(@article) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :summary
+    = f.input :body, input_html: {rows: 8}, class: 'input'
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-primary'
+    = link_to 'Cancelar', articles_path, class: 'btn'

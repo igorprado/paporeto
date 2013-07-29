@@ -1,0 +1,12 @@
+- if notice
+  .alert
+    button.close data-dismiss="alert" type="button" &times;
+    = notice
+
+h1 = @article.title
+
+p = @article.summary
+hr
+= simple_format @article.body
+
+= link_to 'Editar', edit_article_path(@article), class: 'btn'

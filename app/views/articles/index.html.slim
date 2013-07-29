@@ -1,0 +1,21 @@
+h1 Artigos
+
+table.table
+  tr
+    th Título
+    th Sumário
+    th
+
+  - @articles.each do |article|
+    tr
+      td = article.title
+      td = article.summary
+      td
+        .btn-group
+          = link_to 'Ver', article, class: 'btn'
+          = link_to 'Editar', edit_article_path(article), class: 'btn'
+          = link_to 'Excluir', article, :confirm => 'Você tem certeza?', :method => :delete, class: 'btn'
+
+br
+
+= link_to 'Novo artigo', new_article_path, class: 'btn btn-primary'
