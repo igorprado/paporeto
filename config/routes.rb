@@ -1,5 +1,7 @@
 Paporeto::Application.routes.draw do
-  resources :articles
+  resources :articles, path: 'artigos', path_names: {new: 'novo', edit: 'editar'}
+
+  root 'articles#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
