@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
-  validates :title, :summary, presence: true
+  validates :title, :summary, :category, presence: true
+
+  belongs_to :category
 
   def to_param
     "#{id} #{title}".parameterize

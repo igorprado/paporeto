@@ -1,4 +1,4 @@
-doctype
+doctype html
 html
   head
     title paporeto.com
@@ -8,4 +8,13 @@ html
 
   body
     .container
+      .navbar
+        .navbar-inner
+          = link_to 'Paporeto', root_path, class: 'brand'
+          ul.nav
+            li class="#{'active' if params[:controller] == 'articles'}"
+              = link_to 'Artigos', articles_path
+            li class="#{'active' if params[:controller] == 'categories'}"
+              = link_to 'Categorias', categories_path
+
       = yield

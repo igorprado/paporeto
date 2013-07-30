@@ -4,12 +4,14 @@ table.table
   tr
     th Título
     th Sumário
+    th Categoria
     th
 
   - @articles.each do |article|
     tr
       td = article.title
       td = article.summary
+      td = article.category.name
       td
         .btn-group
           = link_to 'Ver', article, class: 'btn'
