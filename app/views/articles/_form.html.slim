@@ -3,6 +3,8 @@
 
   .form-inputs
     = f.input :title
+    = f.uploader :picture
+    
     = f.association :category, prompt: 'Escolha a categoria...'
     = f.input :summary
     = f.input :body, input_html: {rows: 8}, class: 'input'

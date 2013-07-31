@@ -1,9 +1,5 @@
-- if notice
-  .alert
-    button.close data-dismiss="alert" type="button" &times;
-    = notice
-
 h1 = @article.title
+p = img @article.picture.regular if @article.picture?
 
 p = @article.summary
 p: strong = @article.category.name

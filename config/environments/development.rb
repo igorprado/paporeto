@@ -32,4 +32,8 @@ Paporeto::Application.configure do
   # in the development and test environment. In other environments these parameters
   # will simply be filtered out and ignored.
   config.action_controller.action_on_unpermitted_parameters = :raise
+
+  # devise
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
+

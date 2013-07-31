@@ -37,3 +37,7 @@ group :development do
   gem 'binding_of_caller', '~> 0.7.1'
   gem 'xray-rails',        '~> 0.1.6'
 end
+
+gem 'uploadbox', '~> 0.0.4'
+
+gem 'devise', '~> 3.0.0'

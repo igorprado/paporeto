@@ -1,19 +1,18 @@
-h1 Listing categories
+h1 Categorias
 
-table
+table.table
   tr
-    th Name
-    th
-    th
+    th Nome
     th
 
   - @categories.each do |category|
     tr
       td = category.name
-      td = link_to 'Show', category
-      td = link_to 'Edit', edit_category_path(category)
-      td = link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete
+      td
+        .btn-group
+          = link_to 'Editar', edit_category_path(category), class: 'btn'
+          = link_to 'Excluir', category, :confirm => 'Você tem certeza?', :method => :delete, class: 'btn'
 
 br
 
-= link_to 'New Category', new_category_path
+= link_to 'Nova categoria', new_category_path, class: 'btn btn-primary'
