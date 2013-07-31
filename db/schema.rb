@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20130731225044) do
   add_index "images", ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type"
 
   create_table "users", force: true do |t|
+    t.string   "name"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
