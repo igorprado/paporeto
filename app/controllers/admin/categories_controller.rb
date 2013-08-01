@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class Admin::CategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to categories_url, notice: 'Categoria criada com sucesso.' }
+        format.html { redirect_to admin_categories_url, notice: 'Categoria criada com sucesso.' }
         format.json { render action: 'show', status: :created, location: @category }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'Categoria atualizada com sucesso.' }
+        format.html { redirect_to admin_categories_url, notice: 'Categoria atualizada com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -57,7 +57,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url }
+      format.html { redirect_to admin_categories_url }
       format.json { head :no_content }
     end
   end

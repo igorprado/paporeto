@@ -1,4 +1,4 @@
-= simple_form_for(@article) do |f|
+= simple_form_for([:admin, @article]) do |f|
   = f.error_notification
 
   .form-inputs
@@ -11,4 +11,4 @@
 
   .form-actions
     = f.button :submit, class: 'btn btn-primary'
-    = link_to 'Cancelar', articles_path, class: 'btn'
+    = link_to 'Cancelar', admin_articles_path, class: 'btn'

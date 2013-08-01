@@ -14,10 +14,10 @@ table.table
       td = article.category.name
       td
         .btn-group
-          = link_to 'Ver', article, class: 'btn'
-          = link_to 'Editar', edit_article_path(article), class: 'btn'
-          = link_to 'Excluir', article, :confirm => 'Você tem certeza?', :method => :delete, class: 'btn'
+          = link_to 'Ver', [:admin, article], class: 'btn'
+          = link_to 'Editar', edit_admin_article_path(article), class: 'btn'
+          = link_to 'Excluir', [:admin, article], :confirm => 'Você tem certeza?', :method => :delete, class: 'btn'
 
 = paginate @articles, theme: 'twitter-bootstrap', pagination_class: 'pagination-small pagination-centered'
 
-= link_to 'Novo artigo', new_article_path, class: 'btn btn-primary'
+= link_to 'Novo artigo', new_admin_article_path, class: 'btn btn-primary'

@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+class Admin::ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Artigo criado com sucesso.' }
+        format.html { redirect_to [:admin, @article], notice: 'Artigo criado com sucesso.' }
         format.json { render action: 'show', status: :created, location: @article }
       else
         format.html { render action: 'new' }
@@ -45,7 +45,7 @@ class ArticlesController < ApplicationController
     @article.attach_picture(params[:picture_id])
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Artigo atualizado com sucesso.' }
+        format.html { redirect_to [:admin, @article], notice: 'Artigo atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -59,7 +59,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url }
+      format.html { redirect_to admin_articles_url }
       format.json { head :no_content }
     end
   end
