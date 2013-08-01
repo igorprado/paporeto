@@ -5,6 +5,8 @@ class Article < ActiveRecord::Base
 
   uploads_one :picture, thumb: [100, 100], regular: [300, 200]
 
+  paginates_per 20
+
   def to_param
     "#{id} #{title}".parameterize
   end

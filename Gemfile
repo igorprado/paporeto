@@ -38,6 +38,12 @@ group :development do
   gem 'xray-rails',        '~> 0.1.6'
 end
 
+# Upload
 gem 'uploadbox', '~> 0.0.4'
 
+# Login controller
 gem 'devise', '~> 3.0.0'
+
+# Pagination
+gem 'kaminari', '~> 0.14.1'
+gem 'bootstrap-kaminari-views', '~> 0.0.1'
