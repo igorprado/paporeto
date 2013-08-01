@@ -4,13 +4,3 @@ p
 p
   strong Email:
   = @user.email
-p
-  strong Password:
-  = @user.password
-p
-  strong Password confirmation:
-  = @user.password_confirmation
-
-= link_to 'Edit', edit_user_path(@user)
-'|
-= link_to 'Back', users_path

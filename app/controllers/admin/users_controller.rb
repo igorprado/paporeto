@@ -28,7 +28,7 @@ class Admin::UsersController < AdminController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to [:admin, @user], notice: 'Usuário alterado com sucesso.' }
+        format.html { redirect_to [:admin, @user], notice: 'Usuário criado com sucesso.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
         format.html { render action: 'new' }
@@ -52,7 +52,7 @@ class Admin::UsersController < AdminController
           sign_in(@user, bypass: true)
         end
 
-        format.html { redirect_to [:admin, @user], notice: 'User was successfully updated.' }
+        format.html { redirect_to [:admin, @user], notice: 'Usuário alterado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

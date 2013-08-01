@@ -8,7 +8,7 @@ Paporeto::Application.routes.draw do
     resources :articles, path: 'artigos', path_names: {new: 'novo', edit: 'editar'}
   end
 
-  root 'admin/articles#index'
+  #root 'admin/articles#index'
 
   mount Uploadbox::Engine => '/uploadbox', as: :uploadbox
 end
