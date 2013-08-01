@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -31,11 +28,18 @@ gem 'slim-rails', '~> 2.0.1'
 
 gem 'simple_form', '3.0.0.rc'
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development do
   gem 'kickoff_rails', '~> 0.0.6'
   gem 'better_errors',     '~> 0.9.0'
   gem 'binding_of_caller', '~> 0.7.1'
   gem 'xray-rails',        '~> 0.1.6'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 # Upload
