@@ -12,7 +12,7 @@ html
         .container
           = link_to 'Paporeto', root_path, class: 'brand'
 
-          - if current_user
+          - if user_signed_in?
             ul.nav
               li class="#{'active' if params[:controller] =~ /articles/}"
                 = link_to 'Artigos', admin_articles_path

@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title paporeto.com
+    = stylesheet_link_tag    "admin", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "admin", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  body
+
+    .container
+
+      - if notice
+        .alert
+          button.close data-dismiss="alert" type="button" &times;
+          = notice
+
+      - if alert
+        .alert.alert-error
+          button.close data-dismiss="alert" type="button" &times;
+          = alert
+
+      .login.well
+        .page-header
+          h1 Paporeto <small>Login</small>
+        = yield
