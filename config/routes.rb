@@ -1,11 +1,12 @@
 Paporeto::Application.routes.draw do
   devise_for :users
 
-  get :admin, :to => 'admin/articles#index'
+  get :admin, :to => 'admin/dashboard#index'
   namespace :admin do
-    resources :users, path: 'usuarios', path_names: {new: 'novo', edit: 'editar'}
-    resources :categories, path: 'categorias', path_names: {new: 'novo', edit: 'editar'}
-    resources :articles, path: 'artigos', path_names: {new: 'novo', edit: 'editar'}
+    resources :dashboard
+    resources :users
+    resources :categories
+    resources :articles
   end
 
   #root 'admin/articles#index'
