@@ -12,7 +12,7 @@ require 'ffaker'
 100.times do |n|
   Article.create!(
     title: Faker::Lorem.words(4).join(' ').capitalize,
-    summary: Faker::Lorem.paragraph,
+    summary: Faker::Lorem.words(4).join(' ').capitalize + ".",
     body: Faker::Lorem.paragraphs.join(" "),
     category: Category.all.sample)
 end
