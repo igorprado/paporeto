@@ -7,6 +7,12 @@ Category.create!(name: 'Entretenimento')
 
 Article.destroy_all
 
+require 'ffaker'
+
 100.times do |n|
-  Article.create!(title: "Lorem #{n}", summary: 'Sumario teste', category: Category.all.sample)
+  Article.create!(
+    title: Faker::Lorem.sentence,
+    summary: Faker::Lorem.paragraph,
+    body: Faker::Lorem.paragraphs.join(" "),
+    category: Category.all.sample)
 end

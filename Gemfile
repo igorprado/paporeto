@@ -51,3 +51,6 @@ gem 'devise', '~> 3.0.0'
 # Pagination
 gem 'kaminari', '~> 0.14.1'
 gem 'bootstrap-kaminari-views', '~> 0.0.1'
+
+# ffaker - random data for simulate content
+gem "ffaker", "~> 1.16.2"
