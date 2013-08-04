@@ -1,3 +1,11 @@
+User.destroy_all
+
+User.create!(
+    name: 'Usuário Teste da Silva',
+    email: 'teste@teste.com',
+    password: 'teste1234'
+    )
+
 Category.destroy_all
 
 Category.create!(name: 'Notícias')
