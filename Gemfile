@@ -56,3 +56,9 @@ gem 'bootstrap-kaminari-views', '~> 0.0.1'
 
 # ffaker - random data for simulate content
 gem "ffaker", "~> 1.16.2"
+
+# Front-end gems
+gem 'bourbon',         '~> 3.1.8'
+gem 'neat',            '~> 1.3.0'
+gem 'high_voltage',    '~> 1.2.3'
+gem 'normalize-rails', '~> 2.1.1'
