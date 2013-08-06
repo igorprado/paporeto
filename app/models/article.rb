@@ -3,7 +3,7 @@ class Article < ActiveRecord::Base
 
   belongs_to :category
 
-  uploads_one :picture, thumb: [90, 80], regular: [600, 300], large: [940, 380]
+  uploads_one :picture, thumb: [90, 80], regular: [580, 240], large: [940, 380]
 
   paginates_per 20
 
