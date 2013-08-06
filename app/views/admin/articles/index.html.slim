@@ -2,6 +2,8 @@ h1 Artigos
 
 table.table
   tr
+    th
+    th Destaque
     th Título
     th Sumário
     th Categoria
@@ -9,6 +11,10 @@ table.table
 
   - @articles.each do |article|
     tr
+      td = img article.picture.thumb, width: 30, height: 40 if article.picture?
+      td
+        .label.label-info
+          = "Sim" if article.featured?
       td = article.title
       td = article.summary
       td = article.category.name

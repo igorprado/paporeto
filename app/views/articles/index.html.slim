@@ -1,13 +1,15 @@
 - @page_class= 'noticias type-section'
 - @title= 'Notícias'
 
-section#featured-article
-  article.noticias
-    = image_tag 'temp/featured-section.jpg', onload: "this.parentNode.style.backgroundImage = 'url('+this.src+')'"
-    .article-inner
-      = link_to '#' do
-        .category Notícias
-        h1 Longboard é a nova onda entre os jovens de Brasília
+- if @featured
+  section#featured-article
+    article.noticias
+      - if @featured.picture?
+        = image_tag @featured.picture.large, onload: "this.parentNode.style.backgroundImage = 'url('+this.src+')'"
+        .article-inner
+          = link_to '#' do
+            .category = @featured.category.name
+            h1 = @featured.title
 
 section.latest-articles
   .latest-articles-inner

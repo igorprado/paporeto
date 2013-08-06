@@ -19,6 +19,7 @@ pt-BR:
         title: Título
         body: Texto
         summary: Resumo
+        featured: Em destaque
         category: Categoria
     # hints:
     #   defaults:
