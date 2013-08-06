@@ -7,6 +7,16 @@ class Article < ActiveRecord::Base
 
   paginates_per 20
 
+  default_scope -> { order(published_at: :desc) }
+
+  def self.published
+    where('published_at <= ?', Time.now)
+  end
+
+  def self.featured
+    where(featured: true)
+  end
+
   def to_param
     "#{id} #{title}".parameterize
   end
