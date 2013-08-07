@@ -21,6 +21,5 @@ section.latest-articles
           = img article.picture.thumb if article.picture?
           h2 = truncate(article.title, length: 50)
           p = truncate(article.summary, length: 100)
-          time = l article.published_at, format: :short
 
 = render 'shared/send_news'
