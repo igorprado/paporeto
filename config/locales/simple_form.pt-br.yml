@@ -27,6 +27,11 @@ pt-BR:
     placeholders:
       article:
         title: Obrigatório
+      reader_article:
+        name: Nome
+        email: E-mail
+        title: Título
+        body: Conteúdo
     #   defaults:
     #     name: 'Nome'
     #     password: '****'

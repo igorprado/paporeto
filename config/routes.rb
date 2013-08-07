@@ -1,4 +1,6 @@
 Paporeto::Application.routes.draw do
+  resources :reader_articles, only: [:new, :create, :show]
+
   resources :articles, only: [:index, :show]
 
   devise_for :users
