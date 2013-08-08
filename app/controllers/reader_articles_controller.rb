@@ -16,6 +16,9 @@ class ReaderArticlesController < ApplicationController
   def create
     @reader_article = ReaderArticle.new(reader_article_params)
     if @reader_article.save
+      # send email
+      Notifications.reader_sent_article(@reader_article).deliver
+
       redirect_to @reader_article, notice: 'Artigo enviado com sucesso.'
     else
       render action: 'new'
