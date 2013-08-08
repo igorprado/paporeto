@@ -4,5 +4,13 @@ class Category < ActiveRecord::Base
   def slug
     name.parameterize
   end
+
+  def featured_article
+    articles.featured.first
+  end
+
+  def commom_articles
+    articles.where(featured: false)
+  end
   
 end

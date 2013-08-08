@@ -13,7 +13,7 @@ Paporeto::Application.routes.draw do
     resources :articles
   end
 
-  root 'articles#index'
+  root 'home#index'
 
   mount Uploadbox::Engine => '/uploadbox', as: :uploadbox
 end
