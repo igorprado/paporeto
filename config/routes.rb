@@ -1,7 +1,6 @@
 Paporeto::Application.routes.draw do
   resources :reader_articles, only: [:new, :create, :show]
 
-  resources :articles, only: [:index, :show]
 
   devise_for :users
 
@@ -13,7 +12,12 @@ Paporeto::Application.routes.draw do
     resources :articles
   end
 
+  mount Uploadbox::Engine => '/uploadbox', as: :uploadbox
+
   root 'home#index'
 
-  mount Uploadbox::Engine => '/uploadbox', as: :uploadbox
+  resources :categories, path: '', only: [] do
+    resources :articles, path: '', only: [:index, :show]  
+  end
+  
 end

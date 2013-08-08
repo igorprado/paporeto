@@ -16,14 +16,14 @@ section#more-articles
 
       - if category.articles.featured
         article.featured
-          = link_to category.featured_article do
+          = link_to [category, category.featured_article] do
             - if category.featured_article.picture?
               = img category.featured_article.picture.small 
             h2 = category.featured_article.title
 
       - category.commom_articles.limit(2).each do |article|
         article
-          = link_to article do
+          = link_to [category, article] do
             = img article.picture.thumb if article.picture?
             h2 = article.title
 

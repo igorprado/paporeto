@@ -12,5 +12,9 @@ class Category < ActiveRecord::Base
   def commom_articles
     articles.where(featured: false)
   end
+
+  def to_param
+    "#{id} #{name}".parameterize
+  end
   
 end
