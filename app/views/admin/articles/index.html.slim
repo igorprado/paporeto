@@ -11,7 +11,7 @@ table.table
 
   - @articles.each do |article|
     tr
-      td = img article.picture.thumb, width: 30, height: 40 if article.picture?
+      td = img article.picture.thumb, width: 80, height: 40 if article.picture?
       td
         .label.label-info
           = "Sim" if article.featured?
