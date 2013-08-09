@@ -21,7 +21,7 @@ Category.all.each do |category|
     article = Article.create! do |article|
       article.picture      = Image.create_upload(upload_name: 'picture', file: File.open(Dir[file_path].sample), imageable_type: 'Article')
       article.title        = Faker::Lorem.sentence
-      article.summary      = Faker::Lorem.paragraph
+      article.summary      = Faker::Lorem.paragraph(3)
       article.published_at = Time.now
       article.body         = Faker::Lorem.paragraphs(10).join("\n\n")
       article.category     = category
