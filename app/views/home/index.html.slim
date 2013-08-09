@@ -11,7 +11,7 @@ section#featured-article
 section#more-articles
   - @categories.each do |category|
     section.category class="#{category.slug}"
-      = link_to '#' do
+      = link_to category_articles_path(category) do
         h1 = category.name
 
       - if category.articles.featured
